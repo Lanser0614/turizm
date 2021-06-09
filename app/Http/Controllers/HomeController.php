@@ -40,4 +40,6 @@ class HomeController extends Controller
         return view('Admin.add_tour', compact('tourCategory', 'tour'));
     }
 
+    
+
 }

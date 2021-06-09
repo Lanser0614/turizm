@@ -89,43 +89,31 @@
                 <!-- form -->
                 <div class="widget-form">
                     <h3 class="text-white mb30"> Book Your Tour</h3>
-                    <form>
+                    <form method="POST" action="{{ route('feedback') }}">
+                        @csrf
                         <div class="row">
                             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                                 <div class="form-group">
                                     <label class="control-label sr-only" for="select"></label>
-                                    <div class="select">
-                                        <select id="select" name="select" class="form-control">
-                                            <option value="">Where you want to go</option>
-                                            <option value="">Singapore</option>
-                                            <option value="">Thailand</option>
-                                            <option value="">Vietnam</option>
-                                        </select>
-                                    </div>
+                                    <input type="text" class="form-control" name="destenation" placeholder="where do you want go">
                                 </div>
                             </div>
                             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                                 <div class="form-group">
                                     <div class="form-group">
-                                        <label class="control-label sr-only" for="datepicker"></label>
-                                        <div class="input-group">
-                                            <input id="datepicker" name="datepicker" type="text" placeholder="Date" class="form-control" required>
-                                            <span class="input-group-addon"><i class="fa fa-calendar"></i></span> </div>
+                                        
+                                            <input name="date" type="date" placeholder="Date" class="form-control" >
+                                            
                                     </div>
                                 </div>
                             </div>
                             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                                 <div class="form-group">
                                     <label class="control-label sr-only" for="select"></label>
-                                    <div class="select">
-                                        <select id="select" name="select" class="form-control">
-                                            <option value="">Number of Peoples</option>
-                                            <option value="">6</option>
-                                            <option value="">10</option>
-                                            <option value="">25</option>
-                                        </select>
-                                    </div>
-                                </div>
+                                    
+                                     <input type="tel" class="form-control" name="Phone_number" placeholder="phone number" >
+                                    
+                                
                             </div>
                             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                                 <button type="submit" name="singlebutton" class="btn btn-primary">Enquiry Now</button>
@@ -151,69 +139,28 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-12">
-            <!-- destination-section -->
-           <div class="destination-block">
-                    <div class="desti-img">
-                        <img src="{{asset('images/destination_1.jpg')}}" alt="">
-                        <a href="#" class="desti-title">Singapore</a>
-                        <div class="overlay">
+       
+        @foreach ($tours as $item)
+        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-12">
+            <div class="destination-block">
+                <div class="desti-img">
+                    <img src="{{asset('files/'.$item->img)}}" alt="">
+                    <a href="tour/{{$item->id}}" class="desti-title">{{$item->title}}</a>
+                    <div class="overlay">
                         </div>
                         <div class="text">
-                            <h3 class="mb20 text-white">Singapore</h3>
-                            <ul class="angle list-none">
-                                <li>4 Nights / 3 days</li>
-                                <li>3 Star hotel</li>
-                                <li>Breakfast and Dinner</li>
-                            </ul>
-                            <p class="price">$1599</p>
-                            <a href="#" class="btn-link">Go for Singapore <i class="fa fa-angle-right"></i></a></div>
-                    </div>
+                            <h3 class="mb20 text-white">{{$item->title}}</h3>
+                           <ul class="angle list-none">
+                            <li>{{$item->how_many_days}}</li>
+                            <li>{{$item->hotel_name}}</li>
+                            <li>{{$item->what_is_have}}</li>
+                        </ul>
+                        <p class="price">{{$item->price}}</p>
+                            <a href="tour/{{$item->id}}" class="btn-link">Go To {{$item->title}} <i class="fa fa-angle-right"></i></a></div> 
                 </div>
-            <!-- /.destination-section -->
-        </div>
-        <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-12">
-            <!-- destination-section -->
-           <div class="destination-block">
-                    <div class="desti-img">
-                        <img src="{{asset('images/destination_2.jpg')}}" alt="">
-                        <a href="#" class="desti-title">Thailand</a>
-                        <div class="overlay">
-                        </div>
-                        <div class="text">
-                            <h3 class="mb20 text-white">Thailand</h3>
-                            <ul class="angle list-none">
-                                <li>5 Nights / 4 days</li>
-                                <li>3 Star hotel</li>
-                                <li>Breakfast and Dinner</li>
-                            </ul>
-                            <p class="price">$2599</p>
-                            <a href="#" class="btn-link">Go for Thailand <i class="fa fa-angle-right"></i></a></div>
-                    </div>
-                </div>
-            <!-- /.destination-section -->
-        </div>
-        <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-12">
-            <!-- destination-section -->
-             <div class="destination-block">
-                    <div class="desti-img">
-                        <img src="{{asset('images/destination_3.jpg')}}" alt="">
-                        <a href="#" class="desti-title">Vietnam</a>
-                        <div class="overlay">
-                        </div>
-                        <div class="text">
-                            <h3 class="mb20 text-white">Vietnam</h3>
-                            <ul class="angle list-none">
-                                <li>6 Nights / 5 days</li>
-                                <li>3 Star hotel</li>
-                                <li>Breakfast and Dinner</li>
-                            </ul>
-                            <p class="price">$4599</p>
-                            <a href="#" class="btn-link">Go for Vietnam <i class="fa fa-angle-right"></i></a></div>
-                    </div>
-                </div>
-            <!-- /.destination-section -->
-        </div>
+            </div>
+         </div>
+        @endforeach
     </div>
 </div>
 </div>

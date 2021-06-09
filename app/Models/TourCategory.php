@@ -8,6 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class TourCategory extends Model
 {
     use HasFactory;
+    protected $fillable = ['categorias_url',
+                                    'title'];
 
     public function tours(){
 

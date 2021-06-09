@@ -56,6 +56,14 @@
                         </div>
 
 
+
+                        <div class="form-group row">
+                            <label class="col-md-3 col-form-label">Category url <span class="text-danger">*</span></label>
+                            <div class="col-md-7">
+                                <input type="text" class="form-control" name="categorias_url"  value="{{$tourCategory->categorias_url}}">
+                            </div>
+                        </div>
+
                     
 
 

@@ -9,7 +9,7 @@
         <div class="container-fluid">
             <div class="d-flex justify-content-between align-items-center">
                 <ul class="nav nav-tabs page-header-tab">
-                    <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#todo-list">ToDo List</a></li>
+                  
                     <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#todo-add">Add Todo</a></li>
                 </ul>
             </div>
@@ -18,61 +18,7 @@
     <div class="section-body mt-3">
         <div class="container-fluid">
             <div class="tab-content">
-                <div class="tab-pane fade" id="todo-list" role="tabpanel">
-                    <div class="card">
-                        <div class="card-body">
-                            <div class="table-responsive todo_list">
-
-                               <table class="table table-hover table-vcenter mb-0 table_custom spacing8 text-nowrap">
-                                        <thead>
-                                            <tr>
-                                                <th>#</th>
-                                                <th>Title</th>
-                                                <th>Price</th>
-                                                <th>Created</th>
-                                                <th>Action</th>
-                                                <th class="w200">Action</th>
-                                            </tr>
-                                        </thead>
-                                      
-
-
-                              
-                            @foreach ($tour as $item)
-                                         <tbody>
-                                            <tr>
-                                                <td>{{$item->id}}</td>
-                                                <td>
-                                                    <h6 class="mb-0">{{$item->title}}</h6>
-                                                    <span></span>
-                                                </td>
-                                                <td>
-                                                    <ul class="list-unstyled team-info mb-0">
-                                                     
-                                                        <li>{{$item->price}}</li>
-                                                    </ul>
-                                                </td>
-                                                <td>
-                                                    <div class="text-info">{{$item->created_at}}</div>
-                                                  
-                                                </td>
-                                                <td>
-                                                   <span > <a href="deleteTour/{{$item->id}}" class="tag tag-green">DELETE</a></span>
-                                                </td>
-                                                <td>
-                                                    <span > <a href="updateTour/{{$item->id}}" class="tag tag-blue">Edit</a></span>
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                        @endforeach
-
-
-                                    </table>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
+               
                 <div class="tab-pane fade active show" id="todo-add" role="tabpanel">
                     <div class="card">
                         <div class="card-header">
@@ -85,13 +31,17 @@
 
 
 
-                        <form class="card-body" method="POST" action="{{ route('storeTour') }}" enctype="multipart/form-data">
+
+
+                        <form class="card-body" method="POST" action="{{ route('update') }}" enctype="multipart/form-data">
                             @csrf
+                            <input type="hidden" name="id" value="{{$tour->id}}">
+
 
                             <div class="form-group row">
                                 <label class="col-md-3 col-form-label">Title Tour <span class="text-danger">*</span></label>
                                 <div class="col-md-7">
-                                    <input type="text" class="form-control" name="title">
+                                    <input type="text" class="form-control" name="title" value="{{$tour->title}}">
                                 </div>
                             </div>
 
@@ -99,7 +49,7 @@
                             <div class="form-group row">
                                 <label class="col-md-3 col-form-label">how many days <span class="text-danger">*</span></label>
                                 <div class="col-md-7">
-                                    <input type="text" class="form-control" name="how_many_days">
+                                    <input type="text" class="form-control" name="how_many_days" value="{{$tour->how_many_days}}">
                                 </div>
                             </div>
 
@@ -117,14 +67,14 @@
                             <div class="form-group row">
                                 <label class="col-md-3 col-form-label">hotel name <span class="text-danger">*</span></label>
                                 <div class="col-md-7">
-                                    <input type="text" class="form-control" name="hotel_name">
+                                    <input type="text" class="form-control" name="hotel_name" value="{{$tour->hotel_name}}">
                                 </div>
                             </div>
 
                             <div class="form-group row">
                                 <label class="col-md-3 col-form-label">Tour price <span class="text-danger">*</span></label>
                                 <div class="col-md-7">
-                                    <input type="text" class="form-control" name="price">
+                                    <input type="text" class="form-control" name="price"  value="{{$tour->price}}">
                                 </div>
                             </div>
                          
@@ -132,38 +82,40 @@
                             <div class="form-group row">
                                 <label class="col-md-3 col-form-label">Description <span class="text-danger">*</span></label>
                                 <div class="col-md-7">
-                                    <textarea rows="5" id="mytextarea" class="form-control no-resize" placeholder="Please type what you want..." name="description"></textarea>
+                                    <textarea rows="5" id="mytextarea" class="form-control no-resize" placeholder="Please type what you want..." name="description">{!!$tour->description!!}</textarea>
                                 </div>
                             </div>
 
                             <div class="form-group row">
                                 <label class="col-md-3 col-form-label">what is have <span class="text-danger">*</span></label>
                                 <div class="col-md-7">
-                                    <input type="text" class="form-control" name="what_is_have">
+                                    <input type="text" class="form-control" name="what_is_have" value="{{$tour->what_is_have}}">
                                    </div>
                             </div>
 
                             <div class="form-group row">
                                 <label class="col-md-3 col-form-label">what is included <span class="text-danger">*</span></label>
                                 <div class="col-md-7">
-                                    <textarea rows="5" id="mytextarea3" class="form-control no-resize" placeholder="Please type what you want..." name="what_is_included"></textarea>
+                                    <textarea rows="5" id="mytextarea3" class="form-control no-resize" placeholder="Please type what you want..." name="what_is_included">{{$tour->what_is_included}}</textarea>
                                 </div>
                             </div>
 
                             <div class="form-group row">
                                 <label class="col-md-3 col-form-label">program for tour <span class="text-danger">*</span></label>
                                 <div class="col-md-7">
-                                    <textarea rows="5" id="mytextarea2" class="form-control no-resize" placeholder="Please type what you want..." name="program_for_tour"></textarea>
+                                    <textarea rows="5" id="mytextarea2" class="form-control no-resize" placeholder="Please type what you want..." name="program_for_tour">{!!$tour->program_for_tour!!}</textarea>
                                 </div>
                             </div>
 
                             <div class="form-group row">
-                                <label class="col-md-3 col-form-label">Image for Title: Size - 270 x 370  required</label>
-                                <div class="col-md-7">
-                                <input class="form-control" type="file"  name="img" multiple>
-                                </div>
+                                <label class="col-md-3 col-form-label">Image for Tour</label>
+                                <input type="file" name="img" src="{{asset('files/'.$tour->img)}}"  placeholder="Choose image" id="image" value="{{$tour->img }}">
+                                @error('image')
+                                <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
+                                @enderror
+                                <img src="{{asset('files/'.$tour->img)}}" alt="">
                             </div>
-
+    
 
 
                            
@@ -204,25 +156,4 @@
         </footer>
     </div>
 </div>
-
-
-<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
-<script type="text/javascript">
-    tinymce.init({
-      selector: '#mytextarea'
-    });
-    </script>
-
-    <script type="text/javascript">
-        tinymce.init({
-          selector: '#mytextarea2'
-        });
-        </script>
-
-<script type="text/javascript">
-    tinymce.init({
-      selector: '#mytextarea3'
-    });
-    </script>
-
 @endsection

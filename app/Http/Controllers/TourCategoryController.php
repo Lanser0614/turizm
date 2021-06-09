@@ -25,9 +25,18 @@ class TourCategoryController extends Controller
         return view('tour-single-list', compact('tour'));
     }
 
+    public function tour_single_list_two() {
+        
+        $tour = Tour::where('category_id', '=', '2')->get();
+        return view('tour-single-list-two', compact('tour',));
+    }
+
+    
+
     public function tour(Request $request) {
         $tour = Tour::find($request->id);
-        return view('tour', compact('tour'));
+        $tours = Tour::all();
+        return view('tour', compact('tour', 'tours'));
     }
 
 
@@ -45,6 +54,7 @@ class TourCategoryController extends Controller
         $tourCategory = new TourCategory();
         $tourCategory->title=$request->title;
         $tourCategory->description=$request->description;
+        $tourCategory->categorias_url=$request->categorias_url;
         $tourCategory->image_name=$imageName;
 
         $tourCategory->save();
@@ -76,6 +86,7 @@ class TourCategoryController extends Controller
         $tourCategory = TourCategory::find($request->id);
         $tourCategory->title=$request->title;
         $tourCategory->description=$request->description;
+        $tourCategory->categorias_url=$request->categorias_url;
 
         if($imageName){
             unlink(public_path('files').'/'.$tourCategory->image_name);

@@ -23,15 +23,15 @@
             <div class="row ">
                 <div class="col-xl-4 col-lg-4 offset-md-1 col-md-4 col-sm-12 col-12 mb40">
                     <div class="tour-img">
-                        <a href="#" class="imghover"> <img src="{{asset('files/'.$item->image_name)}}" alt="" class="img-fluid"></a>
+                        <a href="{{$item->categorias_url}}" class="imghover"> <img src="{{asset('files/'.$item->image_name)}}" alt="" class="img-fluid"></a>
                     </div>
                 </div>
                 <div class="col-xl-5 col-lg-5 offset-md-1 col-md-5 col-sm-12 col-12 mb40">
                     <div class="tour-block">
                         <div class="tour-content">
-                            <h2 class="mb30"><a href="#" class="title">{{$item->title}}</a></h2>
+                            <h2 class="mb30"><a href="{{$item->categorias_url}}" class="title">{{$item->title}}</a></h2>
                             <p class="mb30">{{$item->description}}</p>
-                            <a href="#" class="btn-link">Go For {{$item->title}}<i class="fa fa-angle-right"></i></a>
+                            <a href="{{$item->categorias_url}}" class="btn-link">Go For {{$item->title}}<i class="fa fa-angle-right"></i></a>
                         </div>
                     </div>
                 </div>

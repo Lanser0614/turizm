@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\FeedbackController;
 use App\Http\Controllers\TourCategoryController;
 use App\Http\Controllers\TourController;
 use Illuminate\Support\Facades\Auth;
@@ -21,6 +22,7 @@ Route::get('/', [TourCategoryController::class, 'index']);
 Route::get('tour-list', [TourCategoryController::class, 'tour_list']);
 
 Route::get('tour-single-list', [TourCategoryController::class, 'tour_single_list']);
+Route::get('tour_single_list_two', [TourCategoryController::class, 'tour_single_list_two']);
 
 Route::get('tour/{id}', [TourCategoryController::class, 'tour']);
 
@@ -34,3 +36,9 @@ Route::post('storeTour', [TourController::class, 'storeTour'])->name('storeTour'
 Route::get('showCategory/{id}', [TourCategoryController::class, 'showCategory']);
 Route::post('updateCategory', [TourCategoryController::class, 'updateCategory'])->name('updateCategory');
 Route::get('delete/{id}', [TourCategoryController::class, 'destroy']);
+
+Route::get('updateTour/{id}', [TourController::class, 'updateTour']);
+Route::post('updateTour', [TourController::class, 'update'])->name('update');
+Route::get('deleteTour/{id}', [TourController::class, 'destroy']);
+
+Route::post('feedback', [FeedbackController::class, 'store'])->name('feedback');

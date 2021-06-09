@@ -98,6 +98,13 @@
 
 
                             <div class="form-group row">
+                                <label class="col-md-3 col-form-label">Category url <span class="text-danger">*</span></label>
+                                <div class="col-md-7">
+                                    <input type="text" class="form-control" name="categorias_url" required>
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
                                 <label class="col-md-3 col-form-label">Image for Category</label>
                                 <div class="col-md-7">
                                 <input class="form-control" type="file" name="image_name">
