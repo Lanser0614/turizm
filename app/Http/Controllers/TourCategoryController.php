@@ -91,8 +91,11 @@ class TourCategoryController extends Controller
 
 
 
-    public function destroy(){
-        
+    public function destroy(Request $request){
+        $tourCategory = TourCategory::find($request->id);
+        unlink(\public_path('files').'/'.$tourCategory->image_name);
+        $tourCategory->delete();
+        return back();
     }
 
 

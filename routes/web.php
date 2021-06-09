@@ -33,3 +33,4 @@ Route::post('storeTourCategory', [TourCategoryController::class, 'storeTourCateg
 Route::post('storeTour', [TourController::class, 'storeTour'])->name('storeTour');
 Route::get('showCategory/{id}', [TourCategoryController::class, 'showCategory']);
 Route::post('updateCategory', [TourCategoryController::class, 'updateCategory'])->name('updateCategory');
+Route::get('delete/{id}', [TourCategoryController::class, 'destroy']);

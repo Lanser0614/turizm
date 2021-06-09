@@ -50,7 +50,7 @@
                                                   
                                                 </td>
                                                 <td>
-                                                   <span > <a href="" class="tag tag-green">DELETE</a></span>
+                                                   <span > <a href="delete/{{$item->id}}" class="tag tag-green">DELETE</a></span>
                                                 </td>
                                                 <td>
                                                     <span > <a href="showCategory/{{$item->id}}" class="tag tag-blue">Edit</a></span>
@@ -112,7 +112,7 @@
                                     <button type="submit" class="btn btn-primary">Submit</button>
                                 </div>
                             </div>
-                            
+
                         </form>
 
 
