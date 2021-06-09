@@ -9,7 +9,7 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <meta name="description" content="">
     <meta name="keywords" content="">
-    <title>Travelair Agency HTML Website Template</title>
+    <title>Assalam Travel</title>
     <!-- Bootstrap -->
     {{-- <link href="css/bootstrap.min.css" rel="stylesheet"> --}}
     <link href="{{asset('css/bootstrap.min.css')}}" rel="stylesheet">
@@ -75,21 +75,19 @@
             </div>
         </div>
        <!-- /.Modal -->
- <a href="javascript:" id="return-to-top"><i class="fa fa-angle-up"></i></a>
- <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
- <script src="{{asset('js/jquery.min.js')}}"></script>
- <!-- Include all compiled plugins (below), or include individual files as needed -->
- <script src="{{asset('js/bootstrap.min.js')}}"></script>
- <script src="{{asset('js/menumaker.js')}}"></script>
- <script src="{{asset('js/jquery.sticky.js')}}"></script>
- <script src="{{asset('js/sticky-header.js')}}"></script>   
- <!-- owl-thumb JavaScript -->
- <script src="{{asset('js/owl.carousel.min.js')}}"></script>
- <script src="{{asset('js/owl.carousel2.thumbs.min.js')}}"></script>
- <script src="{{asset('js/thumb.js')}}"></script>
- <script src="{{asset('js/jquery-ui.js')}}"></script>
- <script src="{{asset('js/date.js')}}"></script>
- <script src="{{asset('js/return-to-top.js')}}"></script>
+       <a href="javascript:" id="return-to-top"><i class="fa fa-angle-up"></i></a>
+       <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+       <script src="js/jquery.min.js"></script>
+       <!-- Include all compiled plugins (below), or include individual files as needed -->
+       <script src="js/bootstrap.min.js"></script>
+       <script src="js/menumaker.js"></script>
+       <script src="js/jquery.sticky.js"></script>
+       <script src="js/sticky-header.js"></script>
+       <script src="js/owl.carousel.min.js"></script>
+       <script src="js/multiple-carousel.js"></script>
+       <script src="js/jquery-ui.js"></script>
+       <script src="js/date.js"></script>
+       <script src="js/return-to-top.js"></script>
 
     </div>
 </body>
