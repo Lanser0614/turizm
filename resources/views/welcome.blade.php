@@ -91,30 +91,30 @@
             <!-- /.section-title -->
         </div>
         <div class="row">
-
-         @foreach ($tour as $item)
-                            
-                       
-                    <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-12">
-                        <div class="destination-block">
-                            <div class="desti-img">
-                                <img src="{{asset('files/'.$item->img)}}" alt="">
-                                <a href="tour/{{$item->id}}" class="desti-title">{{$item->title}}</a>
-                                <div class="overlay">
-                                    </div>
-                                    <div class="text">
-                                        <h3 class="mb20 text-white">{{$item->title}}</h3>
-                                       <ul class="angle list-none">
-                                        <li>{{$item->how_many_days}}</li>
-                                        <li>{{$item->hotel_name}}</li>
-                                        <li>{{$item->what_is_have}}</li>
-                                    </ul>
-                                    <p class="price">{{$item->price}}</p>
-                                        <a href="tour/{{$item->id}}" class="btn-link">Go To {{$item->title}} <i class="fa fa-angle-right"></i></a></div> 
-                            </div>
+            @foreach ($tour as $item)  
+            <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-12 nopr nopl">
+                <div class="destination-block">
+                    <div class="desti-img">
+                        <img src="{{asset('files/'.$item->img)}}" alt="">
+                        <a href="tour/{{$item->id}}" class="desti-title">{{$item->title}}</a>
+                        <div class="overlay">
                         </div>
-                     </div>
-                     @endforeach
+                        <div class="text">
+                            <h3 class="mb20 text-white">{{$item->title}}</h3>
+                           
+                                <ul class="angle list-none">
+                                    <li>{{$item->how_many_days}}</li>
+                                    <li>{{$item->hotel_name}}</li>
+                                    <li>{{$item->what_is_have}}</li>
+                            </ul>
+                            <p class="price">{{$item->price}}</p>
+                            <a href="tour/{{$item->id}}" class="btn-link">Go To {{$item->title}} <i class="fa fa-angle-right"></i></a></div> 
+                    </div>
+                </div>
+            </div>
+            @endforeach
+
+        
             <!-- destination-section -->
            
             <!-- /.destination-section -->
@@ -279,69 +279,7 @@
 </div>
 <!-- /.service-section -->
 <!-- testimonial-section -->
-<div class="space-medium bg-light">
-    <div class="container">
-        <div class="row">
-            <!-- testimonial-head -->
-            <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 col-12 mb60">
-                <div class="testimonial-head">
-                
-                    <h2 class="mb40">What Our Customers Say About Our Tours</h2>
-                    <a href="#" class="btn-link">Read All Reviews <i class="fa fa-angle-right"></i></a>
-                </div>
-            </div>
-            <!-- /.testimonial-head -->
-            <div class="col-xl-6 col-lg-6 offset-md-1 col-md-6 col-sm-12 col-12 mb60">
-                <div class="testimonial-carousel">
-                    <div class="owl-carousel owl-theme testimonial-owl">
-                        <!-- testimonial-item -->
-                        <div class="item">
-                            <div class="testimonial-block">
-                                <div class="testimonial-content">
-                                    <p class="testimonial-text">“Nam aclorem atsem vulputate euismodulla nonlacinia augueauriset venenatis maurised consequat quis exa plarliquam”</p>
-                                    <span class="testi-meta"><strong>- Sarah Arnold</strong> (Our Tourist)</span>
-                                    <div class="testi-arrow"></div>
-                                </div>
-                                <div class="testi-img">
-                                    <img src="images/testi_img_1.jpg" alt="" class="rounded-circle">
-                                </div>
-                            </div>
-                        </div>
-                        <!-- /.testimonial-item -->
-                        <!-- testimonial-item -->
-                        <div class="item">
-                            <div class="testimonial-block">
-                                <div class="testimonial-content">
-                                    <p class="testimonial-text">“Proin dictum justo at finibus consectetur Proin odio odio molestie qui commodo sit amet euismod dictum ligula”</p>
-                                    <span class="testi-meta"><strong>- Maria Young</strong> (Our Tourist)</span>
-                                    <div class="testi-arrow"></div>
-                                </div>
-                                <div class="testi-img">
-                                    <img src="images/testi_img_2.jpg" alt="" class="rounded-circle">
-                                </div>
-                            </div>
-                        </div>
-                        <!-- /.testimonial-item -->
-                        <!-- testimonial-item -->
-                        <div class="item">
-                            <div class="testimonial-block">
-                                <div class="testimonial-content">
-                                    <p class="testimonial-text">“Crasin leo arcuiquamnec elementum erossed tincidunt dolroin tristiquecongue Inaex pharetra euismod duieget”</p>
-                                    <span class="testi-meta"><strong>- Helena Lehoux</strong> (Our Tourist)</span>
-                                    <div class="testi-arrow"></div>
-                                </div>
-                                <div class="testi-img">
-                                    <img src="images/testi_img_3.jpg" alt="" class="rounded-circle">
-                                </div>
-                            </div>
-                        </div>
-                        <!-- /.testimonial-item -->
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+
 <!-- testimonial-section -->
 <!-- /.client-section -->
 <div class="space-small">
