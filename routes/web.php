@@ -4,6 +4,7 @@ use App\Http\Controllers\ContactController;
 use App\Http\Controllers\FeedbackController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\SiteDetailController;
+use App\Http\Controllers\TestController;
 use App\Http\Controllers\TourCategoryController;
 use App\Http\Controllers\TourController;
 use App\Models\SiteDetail;
@@ -60,3 +61,16 @@ Route::get('showDetail/{id}', [SiteDetailController::class, 'showDetail']);
 Route::post('update', [SiteDetailController::class, 'updateDSetail'])->name('updateDSetail');
 
 Route::get('test', [SiteDetailController::class, 'putDetail']);
+
+
+
+
+
+
+
+
+
+//test
+Route::get('test', [TestController::class, 'test']);
+Route::post('testStore', [TestController::class, 'testStore'])->name('testStore');
+Route::get('total', [TestController::class, 'total']);

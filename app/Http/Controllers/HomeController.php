@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Contact;
+use App\Models\Feedback;
 use App\Models\SiteDetail;
 use App\Models\Tour;
 use App\Models\TourCategory;
@@ -26,7 +28,9 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('Admin.home');
+        $feedback = Feedback::all();
+        $contact = Contact::all();
+        return view('Admin.home', compact('feedback', 'contact'));
     }
 
 
