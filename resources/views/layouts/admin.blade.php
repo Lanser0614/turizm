@@ -290,7 +290,8 @@
                 <li class="g_heading">Project</li>
                 <li class="active"><a href="/home"><i class="fas fa-tachometer-alt"></i><span>Dashboard</span></a></li>    
                 <li class="active"><a href="/addCotegory"><i class="fas fa-tachometer-alt"></i><span>Add Catogory</span></a></li>      
-                <li class="active"><a href="/addTour"><i class="fas fa-tachometer-alt"></i><span>Add tour</span></a></li>                         
+                <li class="active"><a href="/addTour"><i class="fas fa-tachometer-alt"></i><span>Add tour</span></a></li>    
+                <li class="active"><a href="/siteDetail"><i class="fas fa-tachometer-alt"></i><span>Site Detail</span></a></li>                     
                 
             </ul>
         </nav>        

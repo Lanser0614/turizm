@@ -1,8 +1,12 @@
 <?php
 
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\FeedbackController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\SiteDetailController;
 use App\Http\Controllers\TourCategoryController;
 use App\Http\Controllers\TourController;
+use App\Models\SiteDetail;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -26,6 +30,11 @@ Route::get('tour_single_list_two', [TourCategoryController::class, 'tour_single_
 
 Route::get('tour/{id}', [TourCategoryController::class, 'tour']);
 
+Route::get('about', [TourCategoryController::class, 'about']);
+Route::get('contact', [TourCategoryController::class, 'contact']);
+
+Route::post('storeContact', [ContactController::class, 'storeContact'])->name('storeContact');
+
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
@@ -42,3 +51,12 @@ Route::post('updateTour', [TourController::class, 'update'])->name('update');
 Route::get('deleteTour/{id}', [TourController::class, 'destroy']);
 
 Route::post('feedback', [FeedbackController::class, 'store'])->name('feedback');
+
+
+Route::get('siteDetail', [HomeController::class, 'siteDetail']);
+
+Route::post('storeDSetail', [SiteDetailController::class, 'storeDSetail'])->name('storeDSetail');
+Route::get('showDetail/{id}', [SiteDetailController::class, 'showDetail']);
+Route::post('update', [SiteDetailController::class, 'updateDSetail'])->name('updateDSetail');
+
+Route::get('test', [SiteDetailController::class, 'putDetail']);

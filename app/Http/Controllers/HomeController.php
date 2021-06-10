@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\SiteDetail;
 use App\Models\Tour;
 use App\Models\TourCategory;
 use Illuminate\Http\Request;
@@ -38,6 +39,12 @@ class HomeController extends Controller
         $tourCategory = TourCategory::all();
         $tour = Tour::all();
         return view('Admin.add_tour', compact('tourCategory', 'tour'));
+    }
+
+
+    public function siteDetail(){
+        $siteDetail = SiteDetail::all();
+        return view('Admin.site_detail', compact('siteDetail'));
     }
 
     

@@ -9,40 +9,29 @@
         <div class="row">
             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 ">
                 <!-- form -->
-                <form>
+                <form method="POST" action="{{ route('feedback') }}">
+                    @csrf
                     <div class="row">
                         <div class="col-xl-3 col-lg-4 col-md-6 col-sm-3 col-12">
                             <div class="form-group">
                                 <label class="control-label sr-only" for="select"></label>
-                                <div class="select">
-                                    <select id="select" name="city" class="form-control">
-                                        <option value="">Where you want to go</option>
-                                        <option value="">Singapore</option>
-                                        <option value="">Thailand</option>
-                                        <option value="">Vietnam</option>
-                                    </select>
-                                </div>
+                                <input type="text" class="form-control" name="destenation" placeholder="where do you want go">
                             </div>
                         </div>
                         <div class="col-xl-3 col-lg-4 col-md-6 col-sm-3 col-12">
                             <div class="form-group">
                                 <label class="control-label sr-only" for="datepicker"></label>
                                 <div class="input-group">
-                                    <input id="datepicker" name="datepicker" type="text" placeholder="Date" class="form-control" required>
-                                    <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                                    <input name="date" type="date" placeholder="Date" class="form-control" >
+                                   
                                 </div>
                             </div>
                         </div>
                         <div class="col-xl-3 col-lg-4 col-md-6 col-sm-3 col-12">
                             <div class="form-group">
                                 <label class="control-label sr-only" for="select"></label>
-                                <div class="select">
-                                    <select id="select" name="select" class="form-control">
-                                        <option value="">Number of Peoples</option>
-                                        <option value="">6</option>
-                                        <option value="">10</option>
-                                        <option value="">25</option>
-                                    </select>
+                                <div class="">
+                                    <input type="tel" class="form-control" name="Phone_number" placeholder="phone number" >
                                 </div>
                             </div>
                         </div>
@@ -61,58 +50,30 @@
 <div class="space-medium">
     <div class="container">
         <!-- tour-1 -->
+        @foreach ($tourCategory as $item)
         <div class="row ">
             <div class="col-xl-4 col-lg-4 offset-md-1 col-md-4 col-sm-12 col-12 mb40">
                 <div class="tour-img">
-                    <a href="#" class="imghover"> <img src="images/tour_img_1.jpg" alt="" class="img-fluid"></a>
+                    <a href="{{$item->categorias_url}}" class="imghover"> <img src="{{asset('files/'.$item->image_name)}}" alt="" class="img-fluid"></a>
                 </div>
             </div>
             <div class="col-xl-5 col-lg-5 offset-md-1 col-md-5 col-sm-12 col-12 mb40">
                 <div class="tour-block">
                     <div class="tour-content">
-                        <h2 class="mb30"><a href="#" class="title">International Tour</a></h2>
-                        <p class="mb30">Vestibulum nec mauris interdum facilisis nequeet convallis odioses praesentet lacinia orciulla dolorerat ullamcorper sitamet meuesered egestas venenatis enimusce sed ipsum seddolor.</p>
-                        <a href="#" class="btn-link">Go For International Tour<i class="fa fa-angle-right"></i></a>
+                        <h2 class="mb30"><a href="{{$item->categorias_url}}" class="title">{{$item->title}}</a></h2>
+                        <p class="mb30">{{$item->description}}</p>
+                        <a href="{{$item->categorias_url}}" class="btn-link">Go For {{$item->title}}<i class="fa fa-angle-right"></i></a>
                     </div>
                 </div>
             </div>
         </div>
+        @endforeach
         <!-- /.tour-1 -->
         <!-- tour-2 -->
-        <div class="row">
-            <div class="col-xl-5 col-lg-5 offset-md-1 col-md-5 col-sm-12 col-12 mb40">
-                <div class="tour-block">
-                    <div class="tour-content">
-                        <h2 class="mb30"><a href="#" class="title">Adventure Tour</a></h2>
-                        <p class="mb30">Donec porttitor lorem utdiam iaculis euismod congue eroset lectus consectetur fermen uspendissolutpat risus utarcu dapibusat conquat quam sodenean pretium a metus euauctor.</p>
-                        <a href="#" class="btn-link">Go For Adventure Tour<i class="fa fa-angle-right"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xl-4 col-lg-4 offset-md-1 col-md-4 col-sm-12 col-12 mb40">
-                <div class="tour-img">
-                    <a href="#" class="imghover"> <img src="images/tour_img_2.jpg" alt="" class="img-fluid"></a>
-                </div>
-            </div>
-        </div>
+      
         <!-- /.tour-2 -->
         <!-- tour-3 -->
-        <div class="row">
-            <div class="col-xl-4 col-lg-4 offset-md-1 col-md-4 col-sm-12 col-12 mb20">
-                <div class="tour-img">
-                    <a href="#" class="imghover"> <img src="images/tour_img_3.jpg" alt="" class="img-fluid"></a>
-                </div>
-            </div>
-            <div class="col-xl-5 col-lg-5 offset-md-1 col-md-5 col-sm-12 col-12 mb20">
-                <div class="tour-block">
-                    <div class="tour-content">
-                        <h2 class="mb30"><a href="#" class="title">Domestic Tour</a></h2>
-                        <p class="mb30">Proin in urna hendrerit tortor dignissim auctor vitae etnibstibulum venenatis lectus urnaut sodales nibh sagittis eestibulum ante ipsum primisin faucibusorci luctus etultrices posuere cubilia.</p>
-                        <a href="#" class="btn-link">Go For Domestic Tour<i class="fa fa-angle-right"></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
+       
         <!-- /.tour-3 -->
     </div>
 </div>
@@ -130,90 +91,32 @@
             <!-- /.section-title -->
         </div>
         <div class="row">
-            <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-12 nopl nopr">
-                <!-- destination-section -->
-                <div class="destination-block">
-                    <div class="desti-img">
-                        <img src="images/destination_1.jpg" alt="">
-                        <a href="#" class="desti-title">Singapore</a>
-                        <div class="overlay">
+
+         @foreach ($tour as $item)
+                            
+                       
+                    <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-12">
+                        <div class="destination-block">
+                            <div class="desti-img">
+                                <img src="{{asset('files/'.$item->img)}}" alt="">
+                                <a href="tour/{{$item->id}}" class="desti-title">{{$item->title}}</a>
+                                <div class="overlay">
+                                    </div>
+                                    <div class="text">
+                                        <h3 class="mb20 text-white">{{$item->title}}</h3>
+                                       <ul class="angle list-none">
+                                        <li>{{$item->how_many_days}}</li>
+                                        <li>{{$item->hotel_name}}</li>
+                                        <li>{{$item->what_is_have}}</li>
+                                    </ul>
+                                    <p class="price">{{$item->price}}</p>
+                                        <a href="tour/{{$item->id}}" class="btn-link">Go To {{$item->title}} <i class="fa fa-angle-right"></i></a></div> 
+                            </div>
                         </div>
-                        <div class="text">
-                            <h3 class="mb20 text-white">Singapore</h3>
-                            <ul class="angle list-none">
-                                <li>4 Nights / 3 days</li>
-                                <li>3 Star hotel</li>
-                                <li>Breakfast and Dinner</li>
-                            </ul>
-                            <p class="price">$1599</p>
-                            <a href="#" class="btn-link">Go for Singapore <i class="fa fa-angle-right"></i></a></div>
-                    </div>
-                </div>
-                <!-- /.destination-section -->
-            </div>
-            <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-12 nopl nopr">
-                <!-- destination-section -->
-                <div class="destination-block">
-                    <div class="desti-img">
-                        <img src="images/destination_2.jpg" alt="">
-                        <a href="#" class="desti-title">Thailand</a>
-                        <div class="overlay">
-                        </div>
-                        <div class="text">
-                            <h3 class="mb20 text-white">Thailand</h3>
-                            <ul class="angle list-none">
-                                <li>5 Nights / 4 days</li>
-                                <li>3 Star hotel</li>
-                                <li>Breakfast and Dinner</li>
-                            </ul>
-                            <p class="price">$2599</p>
-                            <a href="#" class="btn-link">Go for Thailand <i class="fa fa-angle-right"></i></a></div>
-                    </div>
-                </div>
-                <!-- /.destination-section -->
-            </div>
-            <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-12 nopr nopl">
-                <!-- destination-section -->
-                <div class="destination-block">
-                    <div class="desti-img">
-                        <img src="images/destination_3.jpg" alt="">
-                        <a href="#" class="desti-title">Vietnam</a>
-                        <div class="overlay">
-                        </div>
-                        <div class="text">
-                            <h3 class="mb20 text-white">Vietnam</h3>
-                            <ul class="angle list-none">
-                                <li>6 Nights / 5 days</li>
-                                <li>3 Star hotel</li>
-                                <li>Breakfast and Dinner</li>
-                            </ul>
-                            <p class="price">$4599</p>
-                            <a href="#" class="btn-link">Go for Vietnam <i class="fa fa-angle-right"></i></a></div>
-                    </div>
-                </div>
-                <!-- /.destination-section -->
-            </div>
+                     </div>
+                     @endforeach
             <!-- destination-section -->
-            <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-12 nopr nopl">
-                <div class="destination-block">
-                    <div class="desti-img">
-                        <img src="images/destination_4.jpg" alt="">
-                        <a href="#" class="desti-title">Melbourne</a>
-                        <div class="overlay">
-                        </div>
-                        <div class="text">
-                            <h3 class="mb20 text-white">Melbourne</h3>
-                           
-                                <ul class="angle list-none">
-                                <li>4 Nights / 3 days</li>
-                                <li>3 Star hotel</li>
-                                <li>Breakfast and Dinner</li>
-                            </ul>
-                            <p class="price">$2599</p>
-                            <a href="#" class="btn-link">Go for Melbourne <i class="fa fa-angle-right"></i></a></div>
-                    </div>
-                </div>
-            </div>
+           
             <!-- /.destination-section -->
         </div>
     </div>
@@ -382,9 +285,7 @@
             <!-- testimonial-head -->
             <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 col-12 mb60">
                 <div class="testimonial-head">
-                    <div class="quote-icon">
-                        <img src="images/left_quote.png" alt="">
-                    </div>
+                
                     <h2 class="mb40">What Our Customers Say About Our Tours</h2>
                     <a href="#" class="btn-link">Read All Reviews <i class="fa fa-angle-right"></i></a>
                 </div>

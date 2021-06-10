@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\SiteDetail;
 use App\Models\Tour;
 use App\Models\TourCategory;
 use Illuminate\Http\Request;
@@ -11,24 +12,30 @@ class TourCategoryController extends Controller
 
 
     public function index() {
-        return view('welcome');
+        $tourCategory = TourCategory::all();
+        $tour = Tour::all();
+        $siteDetail = SiteDetail::find(1)->get();
+        return view('welcome', compact('tourCategory', 'tour', 'siteDetail'));
     }
 
 
     public function tour_list() {
         $tourCategory = TourCategory::all();
-        return view('tour-list', compact('tourCategory'));
+        $siteDetail = SiteDetail::find(1)->get();
+        return view('tour-list', compact('tourCategory', 'siteDetail'));
     }
 
     public function tour_single_list() {
         $tour = Tour::where('category_id', '=', '1')->get();
-        return view('tour-single-list', compact('tour'));
+        $siteDetail = SiteDetail::find(1)->get();
+        return view('tour-single-list', compact('tour','siteDetail'));
     }
 
     public function tour_single_list_two() {
         
         $tour = Tour::where('category_id', '=', '2')->get();
-        return view('tour-single-list-two', compact('tour',));
+        $siteDetail = SiteDetail::find(1)->get();
+        return view('tour-single-list-two', compact('tour','siteDetail'));
     }
 
     
@@ -36,11 +43,19 @@ class TourCategoryController extends Controller
     public function tour(Request $request) {
         $tour = Tour::find($request->id);
         $tours = Tour::all();
-        return view('tour', compact('tour', 'tours'));
+        $siteDetail = SiteDetail::find(1)->get();
+        return view('tour', compact('tour', 'tours', 'siteDetail'));
     }
 
+    public function about(){
+        $siteDetail = SiteDetail::find(1)->get();
+        return view('about', compact('siteDetail'));
+    }
 
-
+    public function contact(){
+        $siteDetail = SiteDetail::find(1)->get();
+        return view('contact', compact('siteDetail'));
+    }
 
 
     public function storeTourCategory(Request $request){

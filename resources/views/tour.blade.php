@@ -145,7 +145,7 @@
             <div class="destination-block">
                 <div class="desti-img">
                     <img src="{{asset('files/'.$item->img)}}" alt="">
-                    <a href="tour/{{$item->id}}" class="desti-title">{{$item->title}}</a>
+                    <a href="/tour/{{$item->id}}" class="desti-title">{{$item->title}}</a>
                     <div class="overlay">
                         </div>
                         <div class="text">
@@ -156,7 +156,7 @@
                             <li>{{$item->what_is_have}}</li>
                         </ul>
                         <p class="price">{{$item->price}}</p>
-                            <a href="tour/{{$item->id}}" class="btn-link">Go To {{$item->title}} <i class="fa fa-angle-right"></i></a></div> 
+                            <a href="/tour/{{$item->id}}" class="btn-link">Go To {{$item->title}} <i class="fa fa-angle-right"></i></a></div> 
                 </div>
             </div>
          </div>

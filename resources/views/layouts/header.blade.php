@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row">
             <div class="col-xl-3 col-lg-2 col-md-3 col-sm-3 col-12">
-                <div class="logo"> <a href="index.html"><img src="{{asset('images/logo1.png')}}" alt=""> </a> </div>
+                <div class="logo"> <a href="/"><img src="{{asset('images/logo1.png')}}" alt=""> </a> </div>
             </div>
             <div class="col-xl-9 col-lg-10 col-md-9 col-sm-12 col-12">
                 <!-- navigations-->
@@ -13,14 +13,14 @@
                             <li class="has-sub"><a href="#">Tour Packages</a>
                                 <ul>
                                     <li><a href="/tour-list">Tour List</a></li>
-                                    <li><a href="/tour-single-list">International Tour</a></li>
-                                    <li><a href="/tour_single_list_two">Domestic Tour </a></li>
+                                    <li><a href="/tour-single-list">Uzbekistan Tour</a></li>
+                                    <li><a href="/tour_single_list_two">International Tour </a></li>
                                 </ul>
                             </li>
-                            <li><a href="about.html">About</a></li>
+                            <li><a href="/about">About</a></li>
                       
                    
-                            <li><a href="contact-us.html">Contact</a></li>
+                            <li><a href="/contact">Contact</a></li>
                             
                         </ul>
                     </div>
