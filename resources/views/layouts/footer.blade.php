@@ -3,7 +3,7 @@
         <div class="row ">
             <!-- footer-logo -->
             <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-12 ">
-                <div class="ft-img"><img src="images/ft_logo.png" alt=""></div>
+                {{-- <div class="ft-img"><img src="{{asset('images/logo3.png')}}" alt=""></div> --}}
             </div>
             <!-- /.footer-logo -->
             <!-- footer-links -->
