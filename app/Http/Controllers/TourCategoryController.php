@@ -20,22 +20,24 @@ class TourCategoryController extends Controller
 
 
     public function tour_list() {
+        $tour = Tour::all();
         $tourCategory = TourCategory::all();
         $siteDetail = SiteDetail::find(1)->get();
-        return view('tour-list', compact('tourCategory', 'siteDetail'));
+        return view('tour-list', compact('tourCategory', 'siteDetail',));
     }
 
     public function tour_single_list() {
+        $tourCategory = TourCategory::all();
         $tour = Tour::where('category_id', '=', '1')->get();
         $siteDetail = SiteDetail::find(1)->get();
-        return view('tour-single-list', compact('tour','siteDetail'));
+        return view('tour-single-list', compact('tour','siteDetail', 'tourCategory'));
     }
 
     public function tour_single_list_two() {
-        
+        $tourCategory = TourCategory::all();
         $tour = Tour::where('category_id', '=', '2')->get();
         $siteDetail = SiteDetail::find(1)->get();
-        return view('tour-single-list-two', compact('tour','siteDetail'));
+        return view('tour-single-list-two', compact('tour','siteDetail', 'tourCategory'));
     }
 
     

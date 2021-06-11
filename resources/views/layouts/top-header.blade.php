@@ -23,8 +23,8 @@
                 </div>
             </div>
             <div class=" col-xl-1 col-lg-1 col-md-1 col-sm-1 col-4">
-                <a href="#" class="search-icon" data-toggle="modal" data-target="#exampleModal">
-               <i class="fa fa-search"></i></a>
+                <a href="/login" class="search-icon" >
+               <i class="fa fa-sign-in"></i></a>
             </div>
         </div>
     </div>

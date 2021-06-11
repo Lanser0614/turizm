@@ -58,7 +58,8 @@
                                 <div class="col-md-7">
                                 <select name="category_id" class="form-control" >
                                   @foreach ($tourCategory as $item)
-                                        <option value="{{$item->id}}">{{$item->title}}</option>
+                                        <option value="{{$item->id}}" {{$item->id==$item->id?'selected="selected"':''}}>{{$item->title}}</option>
+                                        
                                         @endforeach
                                     </select>
                                 </div>

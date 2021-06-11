@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\SiteDetail;
 use Illuminate\Database\Seeder;
 
 class SiteDetailSeeder extends Seeder
@@ -13,6 +14,6 @@ class SiteDetailSeeder extends Seeder
      */
     public function run()
     {
-        //
+       
     }
 }

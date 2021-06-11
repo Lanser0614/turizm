@@ -141,12 +141,12 @@
                            
                          
                           
-                            {{-- <div class="form-group row">
+                            <div class="form-group row">
                                 <label class="col-md-3 col-form-label"></label>
                                 <div class="col-md-7">
                                     <button type="submit" class="btn btn-primary">Submit</button>
                                 </div>
-                            </div> --}}
+                            </div>
 
                         </form>
 
